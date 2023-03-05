@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="icon" href="../img/keyboard.png" type="image/png"> 
+        <title>Hangman</title>
+        <link rel="stylesheet" type="text/css" href="hangman.css">
+    </head>
+<header>
+<nav>
+   <a href="../index.html" class="nav-link">Home</a>
+   <a href="../projets42.html" class="nav-link">42Projects</a>
+   <a href="../perso.html" class="nav-link">Projets Perso</a>
+   <a href="../slider.html" class="nav-link">Slider</a>
+</nav>
+</header>
+<body>
+    <div class = "container">
+        <h1 class="title">Hangman (jeu du pendu)</h1>
+       
+        <div class="content">
+            <div class="extra_content">
+                <h1 style="font-size:large;text-align: center;">Infos Pratiques</h1>
+                <ul style="list-style-type:square; margin-left:0; padding:0;margin:1%"><li>Technos : C, Makefile</li>
+                    <li>Fonctions utiles : malloc, gnl, scanf, printf</li>
+                    <li>Temps estimé : 20h de travail</li>
+                    <li><a href="https://github.com/victorgrt/hangan" style="text-decoration: none; color:coral">Github</a></li>
+                </ul>
+            </div>
+            <div class="intro">
+                <h2 class="subtitle"> Le jeu du pendu</h2>
+                <p>Le jeu du pendu est un jeu populaire qui a été créé il y a plusieurs siècles. L'origine exacte du jeu n'est pas claire, mais il est probable qu'il ait été inventé en Europe ou en Angleterre. Au fil des ans, le jeu a été adapté et modifié pour inclure des règles différentes et des variantes régionales, mais l'idée de base reste la même : deviner un mot en proposant des lettres jusqu'à ce que toutes les lettres soient trouvées ou jusqu'à ce que le joueur ait épuisé toutes ses chances.</p>
+                <p>Le joueur doit deviner un mot en proposant des lettres une par une. Si la lettre proposée est dans le mot, elle est placée dans sa position respective. Si la lettre n'est pas dans le mot, le joueur est pénalisé en ajoutant une partie de la silhouette d'un homme suspendu à une corde. Le but est de deviner le mot avant que la silhouette ne soit complétée, sinon le joueur perd. Le nombre de tentatives dépend des règles établies, mais généralement, les joueurs ont environ six chances pour deviner le mot.</p>
+            </div>
+            <div class="extra_content2">
+                <h1 style="font-size:large;text-align: center;">Possibles améliorations :</h1>
+                <ul style="list-style-type:square; margin-left:0; padding:0;margin:1%"><li>Problême d'affichage</li>
+                    <li>Ajout de nouveaux mots</li>
+                    <li>Prendre en compte les caractères spéciaux</li>
+                    <li>Fix les leaks</li>
+                </ul>
+            </div>
+            <div class="installation">
+                <h2 class="subtitle">Tester mon programme (Linux)</h2>
+                <p>Il vous suffira d'avoir le compilateur gcc installé pour compiler le programme dans un executable.</p>
+                <p>Le code source de mon implémentation se trouve sur Github, vous pouvez donc cloner ce projet en vous rendant sur mon Github ou alors avec la commande :</p>
+                <code>git clone github.com/victorgrt/hangman</code>
+                <p>Une fois le dossier clonné, utiliser la commande ci-dessous pour lancer la compilation et lancer l'éxécutable :</p>
+                <code>make && ./a.out</code>
+                <p>Une fois sur le programme lancé un mot ainsi que l'échaffau devraient apparaître. Vous pouvez essayer des lettres directement dans le terminal.</p>
+            </div>
+            <div class="preview_container"><img src="./preview/hangman/preview3.png"><img src="./preview/hangman/preview1.png"><img src="./preview/hangman/preview2.png"></div>
+        </div>
+    </div>
+</body>
+</html>

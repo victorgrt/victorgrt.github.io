@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="icon" href="../img/keyboard.png" type="image/png"> 
+        <title>Libft</title>
+        <link rel="stylesheet" type="text/css" href="libft.css">
+    </head>
+<header>
+<nav>
+   <a href="../index.html" class="nav-link">Home</a>
+   <a href="../projets42.html" class="nav-link">42Projects</a>
+   <a href="../perso.html" class="nav-link">Projets Perso</a>
+   <a href="../slider.html" class="nav-link">Slider</a>
+</nav>
+</header>
+<body>
+    <div class = "container">
+        <h1 class="title">Libft</h1>
+        <h2 class="subtitle">"Parce que putstr et putnbr, ça va bien 2 minutes."</h2>
+        <div class="content">       
+            <p>Les librairies de fonction en C permettent aux développeurs de réutiliser du code déjà écrit et testé, ce qui peut être très pratique pour <strong>gagner du temps</strong> et <strong>éviter les erreurs</strong>. Pour inclure une librairie dans un projet, il est souvent nécessaire de créer un <strong>fichier makefile</strong> et un <strong>fichier d'en-tête (.h)</strong> qui contiennent les informations nécessaires pour <strong>compiler</strong> le code et <strong>utiliser</strong> les fonctions de la librairie. En utilisant ces outils, il est possible de créer des applications C <strong>performantes</strong> et <strong>fiables</strong> de manière efficace.</p>
+            <p>Commençons par le Makefile</p>
+            <script src="https://gist.github.com/victorgrt/636933570ae0a531c9321149492da69c.js"></script>
+    <p>La première section du makefile définit quelques variables qui seront utilisées plus tard. La variable "NAME" est définie avec la valeur "libft.a" et représente le nom de la bibliothèque que "make" va compiler. La variable "CCFLAGS" contient des options de compilation qui seront passées à l'outil "gcc" lors de la compilation. La variable "CC" est définie avec la valeur "gcc" et indique à "make" quel compilateur utiliser.</p>
+    <p>La seconde section du makefile définit la variable "SRC" qui contient une liste de fichiers source en .c qui doivent être compilés pour créer la bibliothèque. La variable "OBJ" est définie en utilisant la syntaxe de substitution de chaîne et contient la liste des fichiers .o qui seront créés à partir de ces fichiers source en utilisant l'extension .o à la place de .c.</p>
+    <script src="https://gist.github.com/victorgrt/4794b75385ea50ae6746374c94b27ba9.js"></script>
+    <p>La troisième section du makefile définit les "règles" qui indiquent à "make" comment compiler la bibliothèque. La première règle, "all", indique à "make" quelle action effectuer lorsque l'on exécute "make" sans arguments. Dans ce cas, la règle "all" dépend de la cible "NAME" et de la cible "ok_util". Cela signifie que "make" doit d'abord exécuter les actions associées à ces cibles avant de pouvoir exécuter l'action associée à "all".</p>
+    <p>La deuxième règle, "${NAME}", indique à "make" comment créer la bibliothèque "libft.a". Elle dépend de la liste des fichiers .o qui ont été créés à partir des fichiers source en .c. L'action associée à cette règle consiste à exécuter la commande "gcc" pour lier les fichiers .o en une seule bibliothèque "libft.a".</p>
+    <p>La fonction initialise ensuite la liste de variables <code>args</code> en appelant <code>va_start(args, format)</code>. Cette fonction indique à la liste où se trouve le premier argument variable de la fonction (ici <code>format</code>). Elle doit obligatoirement être appelée avant tout accès à la liste de variables.</p>
+    <p>La troisième règle, "%o : %.c", est une règle générique qui indique à "make" comment créer un fichier .o à partir d'un fichier source en .c. Elle utilise le symbole "wildcard" "%" qui correspond à n'importe quel nom de fichier. L'action associée à cette règle consiste à exécuter la commande "gcc" en utilisant les options de compilation définies dans la variable "CCFLAGS" et en passant en argument le fichier source en .c et en sortie le fichier .o correspondant.</p>
+    <p>Par exemple, si le fichier source en .c s'appelle "ft_atoi.c", alors la règle générique sera utilisée pour créer le fichier "ft_atoi.o" en exécutant la commande suivante :</p>
+    <p><code>gcc -Wall -Werror -Wextra -c ft_atoi.c -o ft_atoi.o</code></p>
+    <p>Cette règle générique est utilisée pour créer tous les fichiers .o nécessaires à partir des fichiers source en .c, en remplaçant simplement le nom de fichier spécifique dans la commande.</p>
+    <h2>Passons maintenant au fichier .h</h2>
+    <script src="https://gist.github.com/victorgrt/ec340826d3e56fcdb651b07768609e2d.js"></script>
+    <p>Ce fichier est un en-tête en C qui définit un certain nombre de fonctions et de types de données qui seront utilisés dans le programme. Le fichier commence par une section de "préprocesseur" qui inclut des fichiers d'en-tête système et définit une "directive de préprocesseur" nommée "LIBFT_H".</p>
+    <p>La directive de préprocesseur "ifndef" vérifie si la constante "LIBFT_H" n'a pas déjà été définie. Si ce n'est pas le cas, la constante est définie et le reste du fichier est compilé. Si la constante a déjà été définie, le reste du fichier est ignoré et ne sera pas inclus dans le programme. Cela permet d'éviter les erreurs de compilation lorsqu'un fichier d'en-tête est inclus plusieurs fois dans un même programme.</p>
+    <p>Le fichier définit ensuite un type de données structuré nommé "t_list" qui contient un pointeur vers un objet générique nommé "content", et un autre pointeur vers un objet "t_list" nommé "next".</p>
+    <script src="https://gist.github.com/victorgrt/b2a8fdb54d826a8418221a6809d199bf.js"></script>
+    <ul>
+      <li><b>ft_lstnew</b> - Crée une nouvelle liste chaînée, avec un élément de contenu spécifié</li>
+      <li><b>ft_lstlast</b> - Renvoie le dernier élément de la liste chaînée donnée</li>
+      <li><b>ft_lstmap</b> - Applique une fonction à chaque élément de la liste chaînée donnée et renvoie une nouvelle liste contenant les résultats</li>
+      <li><b>ft_strlen</b> - Renvoie la longueur d'une chaîne de caractères</li>
+      <li><b>ft_strlcpy</b> - Copie une chaîne de caractères dans une autre chaîne en garantissant que la destination a une taille maximale donnée</li>
+      <li><b>ft_strlcat</b> - Concatène deux chaînes de caractères en garantissant que la destination a une taille maximale donnée</li>
+    </ul>
+    <script src="https://gist.github.com/victorgrt/353dd2e1aca0568fff1ae757a008b229.js"></script>
+    <ul>
+    <li><b>ft_lstadd_front</b> - Ajoute un élément en tête de la liste chaînée donnée</li>
+      <li><b>ft_lstdelone</b> - Supprime un élément de la liste chaînée et libère la mémoire associée</li>
+      <li><b>ft_lstclear</b> - Supprime tous les éléments de la liste chaînée et libère la mémoire associée</li>
+      <li><b>ft_lstiter</b> - Applique une fonction à chaque élément de la liste chaînée</li>
+      <li><b>ft_lstadd_back</b> - Ajoute un élément en fin de la liste chaînée donnée</li>
+      <li><b>ft_putnbr_fd</b> - Affiche un nombre entier sur le descripteur de fichier donné</li>
+      <li><b>ft_putendl_fd</b> - Affiche une chaîne de caractères sur le descripteur de fichier donné, suivie d'un retour à la ligne</li>
+      <li><b>ft_putstr_fd</b> - Affiche une chaîne de caractères sur le descripteur de fichier donné</li>
+      <li><b>ft_putchar_fd</b> - Affiche un caractère sur le descripteur de fichier donné</li>
+      <li><b>ft_calloc</b> - Alloue de la mémoire et initialise les octets à 0</li>
+      <li><b>ft_striteri</b> - Applique une fonction à chaque caractère d'une chaîne de caractères en indiquant son index</li>
+      <li><b>ft_memset</b> - Remplit les octets d'une zone mémoire avec un octet donné</li>
+      <li><b>ft_bzero</b> - Remplit les octets d'une zone mémoire avec zéro</li>
+      <li><b>ft_memcpy</b> - Copie n octets de la zone mémoire src dans la zone mémoire dest</li>
+      <li><b>ft_memmove</b> - Copie n octets de la zone mémoire src dans la zone mémoire dest, gère les overlaps</li>
+      <li><b>ft_memchr</b> - Cherche le premier occurence d'un octet donné dans une zone mémoire</li>
+    </ul>
+    <script src="https://gist.github.com/victorgrt/eae7cee39e6788e3f3b58aa58f404256.js"></script>
+    <ul>
+      <li><b>ft_strchr</b> - Cherche le premier occurence d'un caractère dans une chaîne de caractères</li>
+      <li><b>ft_strrchr</b> - Cherche le dernier occurence d'un caractère dans une chaîne de caractères</li>
+      <li><b>ft_strmapi</b> - Applique une fonction à chaque caractère d'une chaîne de caractères en indiquant son index</li>
+      <li><b>ft_itoa</b> - Convertit un nombre entier en chaîne de caractères</li>
+      <li><b>ft_strdup</b> - Alloue de la mémoire et copie une chaîne de caractères</li>
+      <li><b>ft_split</b> - Sépare une chaîne de caractères en plusieurs chaînes en utilisant un caractère de séparation donné</li>
+      <li><b>ft_strtrim</b> - Supprime les caractères d'un ensemble donné en début et fin de chaîne</li>
+      <li><b>ft_strjoin</b> - Concatène deux chaînes de caractères en allouant de la mémoire</li>
+      <li><b>ft_substr</b> - Crée une nouvelle chaîne de caractères à partir d'une sous-partie d'une chaîne donnée</li>
+      <li><b>ft_strnstr</b> - Cherche une chaîne de caractères dans une autre chaîne de caractères en limitant la recherche à une longueur donnée</li>
+    </ul>
+    <script src="https://gist.github.com/victorgrt/ba6715e4accd0c8720c02d0b9078e396.js"></script>
+    <ul>
+      <li><b>ft_isalpha</b> - Vérifie si un caractère est une lettre</li>
+      <li><b>ft_isdigit</b> - Vérifie si un caractère est un chiffre</li>
+      <li><b>ft_isalnum</b> - Vérifie si un caractère est une lettre ou un chiffre</li>
+      <li><b>ft_isascii</b> - Vérifie si un caractère est un caractère ASCII</li>
+      <li><b>ft_isprint</b> - Vérifie si un caractère est imprimable</li>
+      <li><b>ft_toupper</b> - Convertit un caractère en majuscule</li>
+      <li><b>ft_tolower</b> - Convertit un caractère en minuscule</li>
+      <li><b>ft_lstsize</b> - Renvoie le nombre d'éléments dans une liste chaînée</li>
+      <li><b>ft_taille</b> - Renvoie la longueur d'une chaîne de caractères</li>
+      <li><b>ft_strncmp</b> - Compare deux chaînes de caractères jusqu'à un certain nombre de caractères</li>
+      <li><b>ft_memcmp</b> - Compare deux zones mémoires jusqu'à un certain nombre d'octets</li>
+      <li><b>ft_atoi</b> - Convertit une chaîne de caractères en entier</li>
+    </ul>
+      <p>Pour plus de détails sur ces dernières fonctions, je vous suggère de vous rendre sur mon <a href="https://github.com/victorgrt/Ma-libft/tree/main/libft" style="text-decoration:none;color:coral">Github</a> et n'oubliez pas le #endif à la toute fin de votre fichier !!</p>
+    </div>
+    </div>
+
+</body>
+</html>

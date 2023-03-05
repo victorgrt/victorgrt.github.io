@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="icon" href="../img/keyboard.png" type="image/png"> 
+        <title>Born2beRoot</title>
+        <link rel="stylesheet" type="text/css" href="born2beroot.css">
+    </head>
+<header>
+<nav>
+   <a href="../index.html" class="nav-link">Home</a>
+   <a href="../projets42.html" class="nav-link">42Projects</a>
+   <a href="../perso.html" class="nav-link">Projets Perso</a>
+   <a href="../slider.html" class="nav-link">Slider</a>
+</nav>
+</header>
+<body>
+    <div class = "container">
+        <h1 class="title">Born2beRoot</h1>
+        <h2 class="subtitle">"Parce que putstr et putnbr, ça va bien 2 minutes."</h2>
+        <div class="content">       
+            <p>Ah la fameuse fonction printf... Elle est bien pratique pour afficher du texte à l'écran n'est-ce pas ? Mais saviez-vous que cette fonction pouvait faire bien plus que ça ? En effet, grâce aux <strong>conversions de format</strong>, vous pouvez afficher des nombres, des caractères, etc. Le tout avec une <strong>syntaxe simple</strong> et facile à utiliser. </p>
+            <script src="https://gist.github.com/victorgrt/880df9c2131f31fba6c3fbe39616755c.js"></script>
+            <h2>Explication du code</h2>
+            <p>La fonction commence par déclarer une variable de type <code>va_list</code> qui va être utilisée pour stocker une liste de variables d'arguments de type indéterminé. Cette variable sera utilisée pour accéder aux différents arguments passés à la fonction. Deux autres variables, <code>i</code> et <code>len</code>, sont déclarées et initialisées respectivement à 0. La variable <code>i</code> servira à parcourir la chaîne de caractères <code>format</code> et la variable <code>len</code> servira à compter le nombre de caractères affichés à l'écran.</p>
+            <p>La fonction initialise ensuite la liste de variables <code>args</code> en appelant <code>va_start(args, format)</code>. Cette fonction indique à la liste où se trouve le premier argument variable de la fonction (ici <code>format</code>). Elle doit obligatoirement être appelée avant tout accès à la liste de variables.</p>
+            <p>Ensuite, la fonction entre dans une boucle <code>while</code> qui va parcourir la chaîne de caractères <code>format</code> caractère par caractère jusqu'à ce qu'elle rencontre le caractère nul de fin de chaîne (<code>'\0'</code>). A chaque itération, la fonction vérifie si le caractère courant est un <code>'%'</code>. Si c'est le cas, cela signifie qu'un caractère de format est présent et qu'il faut appeler la fonction <code>print_arg</code> pour traiter cette conversion de format. La valeur renvoyée par la fonction est ajoutée à la variable <code>len</code> qui sert à compter le nombre de caractères affichés à l'écran. Si le caractère courant n'est pas un <code>'%'</code>, il est affiché tel quel à l'écran en utilisant la fonction <code>ft_putchar</code>. La valeur renvoyée par cette fonction (1 si le caractère a été affiché avec succès, 0 sinon) est ajoutée à la variable <code>len</code>.</p>
+            <p>Lorsque la boucle s'achève, la fonction libère la liste de variables en appelant <code>va_end(args)</code> et renvoie le nombre de caractères affichés à l'écran grâce à la variable <code>len</code>.</p>
+            <script src="https://gist.github.com/victorgrt/d0d4e4092b7956b7bdb3484bbfe4ba38.js"></script>
+            <p>La fonction déclare une variable <code>len</code> initialisée à 0 qui va servir à compter le nombre de caractères affichés à l'écran. Elle utilise ensuite une série de <code>if</code>/<code>else if</code> pour vérifier la valeur du caractère de format passé en argument (<code>format</code>). Selon la valeur de ce caractère, la fonction appelle une fonction spécifique pour afficher la valeur de la variable correspondante présente dans la liste de variables <code>args</code>. Ces fonctions sont <code>ft_putchar</code>, <code>ft_putstr</code>, <code>ft_print_void</code>, <code>ft_print_nb</code>, <code>ft_print_unsigned</code> et <code>ft_print_hexa</code>. La valeur renvoyée par ces fonctions est ajoutée à la variable <code>len</code> qui sert à compter le nombre de caractères affichés à l'écran.</p>
+            <p>Voici une description de chaque fonction appelée dans <code>print_arg</code> :</p>
+            <ul>
+              <li><code>ft_putchar</code> : affiche un caractère sur la sortie standard</li>
+              <li><code>ft_putstr</code> : affiche une chaîne de caractères sur la sortie standard</li>
+              <li><code>ft_print_void</code> : affiche l'adresse mémoire d'un pointeur de type <code>void *</code> en format hexadécimal précédé de <code>"0x"</code></li>
+              <li><code>ft_print_nb</code> : affiche un entier en base décimale</li>
+              <li><code>ft_print_unsigned</code> : affiche un entier non signé en base décimale</li>
+              <li><code>ft_print_hexa</code> : affiche un entier non signé en base hexadécimale (majuscules si <code>format</code> vaut <code>'X'</code>, minuscules sinon).</li>
+            </ul>
+            <p>La fonction retourne enfin la valeur de <code>len</code>, c'est-à-dire le nombre de caractères affichés à l'écran. Cette valeur est utilisée par la fonction <code>ft_printf</code> pour compter le nombre total de caractères affichés.</p>
+            <p>Pour plus de détails sur ces dernières fonctions, je vous suggère de vous rendre sur mon <a href="https://github.com/victorgrt/ft_printf/tree/main/ft_printf" style="text-decoration:none;color:coral">Github</a></p>
+            
+        </div>
+    </div>
+
+</body>
+</html>

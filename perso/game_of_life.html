@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="icon" href="../img/keyboard.png" type="image/png"> 
+        <title>Game of Life</title>
+        <link rel="stylesheet" type="text/css" href="game_of_life.css">
+    </head>
+<header>
+<nav>
+   <a href="../index.html" class="nav-link">Home</a>
+   <a href="../projets42.html" class="nav-link">42Projects</a>
+   <a href="../perso.html" class="nav-link">Projets Perso</a>
+   <a href="../slider.html" class="nav-link">Slider</a>
+</nav>
+</header>
+<body>
+    <div class = "container">
+        <h1 class="title">Game of Life de Conway</h1>
+        <div class="content">
+            <div class="extra_content">
+                <h1 style="font-size:large;text-align: center;">Infos Pratiques</h1>
+                <ul style="list-style-type:square; margin-left:0; padding:0;margin:1%"><li>Techno : Python (pygame)</li>
+                    <li>Temps estimé : 25h de travail</li>
+                    <li><a href="https://github.com/victorgrt/game-of-life" style="text-decoration: none; color:coral">Github</a></li>
+                </ul>
+            </div>
+            <a href="https://www.youtube.com/watch?v=R9Plq-D1gEk" id="link_yt"><div class="extra_content2">Pour voir une interview de 10 minutes de John Conway disponible sur la chaîne youtube de Numberphile.<p class="cliquer">[ Cliquer ICI ]</p></div></a>
+            <div class="intro">
+                <h2 class="subtitle"> Le Jeu de la Vie de Conway</h2>
+                <p>Le jeu de la vie de Conway est un célèbre automate cellulaire inventé par le mathématicien britannique John Horton Conway en 1970. Cet automate se compose d'une grille bidimensionnelle de cellules qui peuvent être soit vivantes (représentées par un état "1"), soit mortes (représentées par un état "0"). Les cellules interagissent les unes avec les autres selon des règles simples, créant ainsi des évolutions fascinantes et imprévisibles.</p>
+                <p>Les règles du jeu de la vie sont les suivantes :</p>
+                <ul>
+                <li>Une cellule vivante qui a moins de deux voisins vivants meurt, par sous-population.</li>
+                <li>Une cellule vivante qui a plus de trois voisins vivants meurt, par surpopulation.</li>
+                <li>Une cellule vivante qui a exactement deux ou trois voisins vivants survit jusqu'à la génération suivante.</li>
+                <li>Une cellule morte avec exactement trois voisins vivants devient une cellule vivante, par reproduction.</li>
+                </ul>
+                <p>Ces règles simples peuvent donner lieu à des comportements complexes et imprévisibles. Certaines configurations de cellules sont stables et restent inchangées d'une génération à l'autre, tandis que d'autres évoluent de manière chaotique ou créent des structures émergentes fascinantes. Le jeu de la vie a inspiré de nombreux artistes, mathématiciens et scientifiques, et est souvent utilisé pour étudier la complexité et les systèmes dynamiques.</p>
+                <p>Parmi les motifs les plus connus du jeu de la vie, on peut citer le planeur, qui se déplace dans l'espace en conservant sa forme, le canon à planeurs, qui tire des planeurs à intervalles réguliers, ou encore la ruche, une structure stable qui évolue en libérant des planeurs à intervalles réguliers.</p>
+                <p>En implémentant le jeu de la vie en Python, vous pouvez découvrir par vous-même les merveilles de ce système fascinant, explorer différents modèles et configurations, et peut-être même créer vos propres structures émergentes intéressantes.</p>
+            </div>
+            <div class="extra_content3">
+                <h1 style="font-size:large;text-align: center;">Possibles améliorations :</h1>
+                <ul style="list-style-type:square; margin-left:0; padding:0;margin:1%"><li>Fix le Crash venant des patternes</li>
+                    <li>Ajout de nouveaux patternes et effets sonnores ?</li>
+                    <li>Problème compteur cellules mortes</li>
+                    <li></li>
+                </ul>
+            </div>
+            <div class="analyse">
+                <h2 class="subtitle">Tester mon programme (Linux)</h2>
+                <p>Tout d'abord assurez vous d'avoir Python3 et la librairie Pygame installés. Sans eux le programme ne fonctionnera pas.</p>
+                <p>Le code source de mon implémentation se trouve sur Github, vous pouvez donc cloner ce projet en vous rendant sur mon Github ou alors avec la commande :</p>
+                <code>git clone github.com/victorgrt/game_of_life.git</code>
+                <p>Une fois le dossier clonné, vous n'avez plus qu'à lancer la commande :</p>
+                <code>python3 main.py</code>
+                <p>Une fois sur le programme lancé vous pouver vous amuser a placer vos cellules manuelement ou placer différents patternes (répertoriés dans les règles, appuyer sur la touche "R"). Have Fun :)</p>
+            </div>
+            <div class="preview_container"><img src="./preview/game_of_life/preview1.png"><img src="./preview/game_of_life/preview2.png"><img src="./preview/game_of_life/preview3.png"></div>
+        </div>
+    </div>
+</body>
+</html>
