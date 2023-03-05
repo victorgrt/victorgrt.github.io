@@ -73,6 +73,12 @@ nav>a:hover {
     font-size: x-large;
 }
 
+.sujet{
+    text-decoration: none;
+    margin:1%;
+    color: cornflowerblue;
+}
+
 .subtitle{
     margin-bottom: 1%;
     font-size: large;

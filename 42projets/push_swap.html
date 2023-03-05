@@ -15,26 +15,10 @@
 </header>
 <body>
     <div class = "container">
-        <h1 class="title">Push_Swap</h1>
-        <h2 class="subtitle">"Parce que putstr et putnbr, ça va bien 2 minutes."</h2>
+        <h1 class="title">Push_Swap</h1><a href="https://cdn.intra.42.fr/pdf/pdf/69291/fr.subject.pdf" class="sujet">sujet.pdf</a>
+        <h2 class="subtitle">"Parce que Swap_push, c’est moins naturel"</h2>
         <div class="content">       
-            <p>La fonction <strong>get_next_line</strong> est une fonction permettant de lire une ligne de texte à partir d'un descripteur de fichier donné. Elle prend en paramètre un entier <code>fd</code> représentant le descripteur de fichier à lire et retourne la ligne sous forme de chaîne de caractères. Si la fin du fichier est atteinte, la fonction retourne <code>NULL</code>.</p>
-            <p>L'utilisation de la fonction <code>get_next_line</code> peut être utile dans les cas où il est nécessaire de lire un fichier ligne par ligne, par exemple pour traiter un fichier de données ou pour afficher le contenu d'un fichier à l'écran. Elle peut également être utilisée pour lire l'entrée standard (stdin) ligne par ligne.</p>
-            <p>Cependant, la fonction <code>get_next_line</code> a également des inconvénients. Elle nécessite l'utilisation de variables statiques pour stocker les données lues, ce qui peut poser des problèmes lors de l'utilisation de la fonction dans un environnement multithreadé. De plus, la fonction utilise une allocation dynamique de mémoire, ce qui peut entraîner des fuites de mémoire si la mémoire allouée n'est pas correctement libérée. Il est donc important de veiller à libérer la mémoire lorsqu'elle n'est plus nécessaire.</p>
-            <p> Voici comment j'ai décidé de coder cette fonction :</p>
-            <script src="https://gist.github.com/victorgrt/4cf4b87e9e00baf9e6cce13ed4fc8c1e.js"></script>
-        <p>La fonction <strong>get_next_line</strong> lit une ligne à partir d'un descripteur de fichier donné et la retourne sous forme de chaîne de caractères. Si la fin du fichier est atteinte, la fonction retourne <code>NULL</code>. La fonction prend en paramètre un entier <code>fd</code> représentant le descripteur de fichier à lire. Le descripteur de fichier doit être ouvert en lecture avant d'être passé à la fonction. La fonction utilise une variable statique pour stocker les données lues afin de pouvoir continuer à lire la ligne suivante lors de l'appel suivant de la fonction.</p>
-        <script src="https://gist.github.com/victorgrt/549cdf38c363a7312357b204c1f37a89.js"></script>
-        <p>La fonction <strong>recupfile</strong> lit des données à partir du descripteur de fichier et les stocke dans une chaîne de caractères. La chaîne de caractères est allouée dynamiquement et doit être libérée lorsqu'elle n'est plus nécessaire. La fonction prend en paramètres une chaîne de caractères <code>save</code> et un entier <code>fd</code> représentant le descripteur de fichier à lire. Si la lecture échoue, la fonction retourne <code>NULL</code>. Sinon, elle retourne la chaîne de caractères contenant les données lues.</p>
-        <script src="https://gist.github.com/victorgrt/04f685f75b5c51f6bdbd2897bf661eba.js"></script>
-        <p>La fonction <strong>recupline</strong> extrait une ligne de texte à partir d'une chaîne de caractères donnée. La ligne est séparée de la chaîne de caractères en utilisant le caractère de nouvelle ligne <code>'\n'</code>. La fonction retourne la ligne extraite sous forme de chaîne de caractères allouée dynamiquement et qui doit être libérée lorsqu'elle n'est plus nécessaire. Si la chaîne de caractères passée en paramètre est <code>NULL</code>, la fonction retourne également <code>NULL</code>. Si la chaîne de caractères ne contient pas de caractère de nouvelle ligne, la fonction retourne <code>NULL</code>.</p>
-        <script src="https://gist.github.com/victorgrt/34cb0408c776cbe8a97682a52af4d765.js"></script>
-        <p>La fonction <strong>trimming_string</strong> modifie une chaîne de caractères en enlevant la partie de la chaîne jusqu'au premier caractère de nouvelle ligne. La chaîne de caractères modifiée est retournée. Si la chaîne de caractères passée en paramètre est <code>NULL</code>, la fonction retourne <code>NULL</code>. Si la chaîne de caractères ne contient pas de caractère de nouvelle ligne, la fonction retourne la chaîne de caractères inchangée. La chaîne de caractères passée en paramètre est libérée avant de retourner la chaîne modifiée.</p> 
-    
-        
-    <p>Pour plus de détails sur les fonctions que j'ai été amené à utiliser (ft_strjoin, ft_calloc et la pire de toutes : ft_strlen), je vous suggère de vous rendre sur mon <a href="https://github.com/victorgrt/ft_printf/tree/main/ft_printf" style="text-decoration:none;color:coral">Github</a></p>
-    
-            
+           <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repellat, commodi! Sit illum odit ad quidem! Numquam ipsam nobis modi, assumenda omnis sequi quis quia ad repudiandae deserunt, nisi eos odio.</p>
         </div>
     </div>
 
